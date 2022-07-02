@@ -6,9 +6,20 @@
   <img src="https://badgen.net/badge/webpack/5.73.0/blue" alt="webpack"/>
   <img src="https://badgen.net/badge/React//blue" alt="React"/>
   <img src="https://badgen.net/badge/TypeScript//blue" alt="TypeScript"/>
-  
 </p>
 <br />
+
+## Start
+1. img-gallery로 이동합니다.
+```sh
+cd img-gallery 
+```
+
+2. start를 합니다. 
+```sh
+$ yarn start
+```
+
 
 ## USER FLOW
 
