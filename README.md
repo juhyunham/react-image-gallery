@@ -5,6 +5,7 @@
  <p align="center">
   <img src="https://badgen.net/badge/webpack/5.73.0/blue" alt="webpack"/>
   <img src="https://badgen.net/badge/React//blue" alt="React"/>
+  <img src="https://badgen.net/badge/TypeScript//blue" alt="TypeScript"/>
   
 </p>
 <br />
