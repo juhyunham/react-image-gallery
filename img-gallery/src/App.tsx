@@ -12,16 +12,19 @@ function App() {
   return (
     <div>
       <div className="img-wrapper">
-        <p className="text-center">
-          이미지가 없습니다. <br /> 이미지를 추가해주세요.
-        </p>
+        {imageList.length === 0 && (
+          <p className="text-center">
+            이미지가 없습니다. <br /> 이미지를 추가해주세요.
+          </p>
+        )}
         <input
           type="file"
           ref={RefFileInput}
           className="input-file-box"
           onChange={(event) => {
             if (event.currentTarget.value) {
-              setImageList((prev) => [...prev, event.currentTarget.value]);
+              const currentValue = event.currentTarget.value;
+              setImageList((prev) => [...prev, currentValue]);
             }
           }}
         />
