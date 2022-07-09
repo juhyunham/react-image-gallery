@@ -20,7 +20,9 @@ function App() {
           ref={RefFileInput}
           className="input-file-box"
           onChange={(event) => {
-            setImageList((prev) => [...prev, event.currentTarget.value]);
+            if (event.currentTarget.value) {
+              setImageList((prev) => [...prev, event.currentTarget.value]);
+            }
           }}
         />
         <div className="image-wrap">
