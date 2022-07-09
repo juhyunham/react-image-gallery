@@ -7,8 +7,6 @@ function App() {
   const RefFileInput = useRef<HTMLInputElement>(null);
   const [imageList, setImageList] = useState<string[]>([]);
 
-  console.log(`imageList`, imageList);
-
   return (
     <div>
       <div className="img-wrapper">
@@ -22,9 +20,17 @@ function App() {
           ref={RefFileInput}
           className="input-file-box"
           onChange={(event) => {
-            if (event.currentTarget.value) {
-              const currentValue = event.currentTarget.value;
-              setImageList((prev) => [...prev, currentValue]);
+            if (event.currentTarget.files?.[0]) {
+              const file = event.currentTarget.files[0];
+
+              //File API사용
+              const reader = new FileReader();
+
+              reader.readAsDataURL(file);
+              reader.onloadend = (event) => {
+                console.log(event.target);
+                setImageList((prev) => [...prev, event.target?.result as string]);
+              };
             }
           }}
         />
@@ -32,6 +38,9 @@ function App() {
           <button type="button" className="plus-box" onClick={() => RefFileInput.current?.click()}>
             +
           </button>
+          {imageList.map((image, index) => {
+            return <ImageBox key={image + index} src={image} />;
+          })}
         </div>
       </div>
     </div>
