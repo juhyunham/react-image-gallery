@@ -1,10 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import ImageBox from "./components/ImageBox";
 
 function App() {
   const RefFileInput = useRef<HTMLInputElement>(null);
+  const [imageList, setImageList] = useState<string[]>([]);
+
+  console.log(`imageList`, imageList);
 
   return (
     <div>
@@ -12,7 +15,14 @@ function App() {
         <p className="text-center">
           이미지가 없습니다. <br /> 이미지를 추가해주세요.
         </p>
-        <input type="file" ref={RefFileInput} className="input-file-box" />
+        <input
+          type="file"
+          ref={RefFileInput}
+          className="input-file-box"
+          onChange={(event) => {
+            setImageList((prev) => [...prev, event.currentTarget.value]);
+          }}
+        />
         <div className="image-wrap">
           <button type="button" className="plus-box" onClick={() => RefFileInput.current?.click()}>
             +
