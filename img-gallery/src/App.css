@@ -19,13 +19,22 @@
   overflow: hidden;
 }
 
-.image-wrap {
+.image-wrapper {
   display: flex;
-  margin-top: 80px;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
+  justify-self: center;
+  margin-top: 80px;
   gap: 30px;
+}
+
+.image-wrap {
+  display: flex;
+  overflow: hidden;
+  overflow-x: auto;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .image-box {
