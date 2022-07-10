@@ -8,9 +8,6 @@ function App() {
   const [imageList, setImageList] = useState<string[]>([]);
 
   const onDrop = useCallback((acceptedFiles: any) => {
-    console.log(acceptedFiles);
-
-    // onChange={(event) => {
     if (acceptedFiles.length) {
       for (const file of acceptedFiles) {
         //File API사용
@@ -23,7 +20,6 @@ function App() {
         };
       }
     }
-    // }}
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
