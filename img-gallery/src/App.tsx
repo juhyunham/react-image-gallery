@@ -44,12 +44,7 @@ function App() {
             {imageList.map((image, index) => {
               return <ImageBox key={image + index} src={image} />;
             })}
-            <input
-              // type="file"
-              // ref={RefFileInput}
-              // className="input-file-box"
-              {...getInputProps()}
-            />
+            <input type="file" {...getInputProps()} />
           </div>
         </div>
       </div>
