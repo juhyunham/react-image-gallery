@@ -29,4 +29,4 @@ $ yarn start
 
 ## Final IMage
 
-![USER FlOW](./img-gallery/public/image/finalImage.JPG/ "final image")
+![최종본](https://user-images.githubusercontent.com/68492359/179398974-1bb0d5b1-1290-4a64-9898-fd3e46943f79.JPG)
