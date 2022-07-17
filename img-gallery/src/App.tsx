@@ -23,6 +23,12 @@ function App() {
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
+  const removeItem = (image: string) => {
+    const newList = imageList.filter((item) => item !== image);
+
+    setImageList(newList);
+  };
+
   return (
     <div>
       <div className="img-wrapper">
@@ -38,7 +44,7 @@ function App() {
           </button>
           <div className="image-wrap">
             {imageList.map((image, index) => {
-              return <ImageBox key={image + index} src={image} />;
+              return <ImageBox key={image + index} src={image} handleClick={removeItem} />;
             })}
             <input type="file" {...getInputProps()} />
           </div>

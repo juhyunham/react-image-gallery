@@ -1,12 +1,17 @@
 import BlindText from "./BlindTest";
 
-function ImageBox(props: { src: string }) {
+interface ImageBoxProps {
+  src: string;
+  handleClick: (image: string) => void;
+}
+
+function ImageBox({ src, handleClick }: ImageBoxProps) {
   return (
     <div className="image-box">
-      <button type="button">
+      <button type="button" className="btn-close" onClick={() => handleClick(src)}>
         <BlindText tag="span">닫기</BlindText>
       </button>
-      <img src={props.src} alt="" />
+      <img src={src} alt="" />
     </div>
   );
 }
